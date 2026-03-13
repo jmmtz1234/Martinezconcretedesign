@@ -2,17 +2,15 @@
 <html>
 
 <head>
-
 <title>Martinez Concrete Design | DFW Concrete Contractor</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
+/* GLOBAL */
 html {
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -39,7 +37,6 @@ nav {
   top: 0;
   z-index: 10;
 }
-
 nav a {
   color: white;
   text-decoration: none;
@@ -47,7 +44,6 @@ nav a {
   font-size: 18px;
   transition: 0.3s;
 }
-
 nav a:hover {
   color: #ccc;
 }
@@ -61,7 +57,6 @@ nav a:hover {
   text-align: center;
   position: relative;
 }
-
 .hero::after {
   content: "";
   position: absolute;
@@ -69,27 +64,21 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-
-.hero h1,
-.hero p,
-.hero button {
+.hero h1, .hero p, .hero button {
   position: relative;
   z-index: 2;
 }
-
 .hero h1 {
   font-size: 52px;
   margin-bottom: 10px;
 }
-
 .hero p {
   font-size: 22px;
   margin-bottom: 30px;
 }
-
 .hero button {
   padding: 15px 35px;
   font-size: 18px;
@@ -100,7 +89,6 @@ nav a:hover {
   border-radius: 6px;
   transition: 0.3s;
 }
-
 .hero button:hover {
   background: white;
   color: black;
@@ -113,47 +101,42 @@ nav a:hover {
   background: #000;
   text-align: center;
 }
-
 .services h2 {
   font-size: 36px;
   margin-bottom: 50px;
 }
-
 .service-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
 }
-
 .card {
   position: relative;
   width: 300px;
+  height: 220px; /* fixed height for overlay centering */
   overflow: hidden;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .card:hover {
   transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
-
 .card img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
-
-/* Hover overlay */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0,0,0,0.75);
   color: white;
   display: flex;
   flex-direction: column;
@@ -164,15 +147,12 @@ nav a:hover {
   transition: 0.4s;
   padding: 20px;
 }
-
 .card:hover .overlay {
   opacity: 1;
 }
-
 .overlay h3 {
   margin-bottom: 10px;
 }
-
 .overlay p {
   font-size: 14px;
   line-height: 1.5;
@@ -184,12 +164,10 @@ nav a:hover {
   background: #111;
   text-align: center;
 }
-
 .gallery h2 {
   font-size: 36px;
   margin-bottom: 40px;
 }
-
 .slider {
   width: 90%;
   max-width: 900px;
@@ -197,12 +175,10 @@ nav a:hover {
   overflow: hidden;
   border-radius: 10px;
 }
-
 .slider img {
   width: 100%;
   display: none;
 }
-
 .slider img.active {
   display: block;
 }
@@ -213,12 +189,10 @@ nav a:hover {
   background: #000;
   text-align: center;
 }
-
 .quote h2 {
   font-size: 36px;
   margin-bottom: 30px;
 }
-
 .quote input,
 .quote textarea {
   width: 80%;
@@ -229,7 +203,6 @@ nav a:hover {
   border-radius: 6px;
   font-family: 'Poppins';
 }
-
 .quote button {
   padding: 14px 30px;
   background: white;
@@ -237,7 +210,6 @@ nav a:hover {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .quote button:hover {
   transform: scale(1.05);
 }
@@ -255,7 +227,6 @@ footer {
   text-align: center;
   padding: 40px;
 }
-
 footer h2 {
   font-size: 28px;
   margin-bottom: 10px;
@@ -266,14 +237,12 @@ footer h2 {
   .hero h1 {
     font-size: 36px;
   }
-
   .service-container {
     flex-direction: column;
     align-items: center;
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -291,21 +260,13 @@ Martinez Concrete Design
 </nav>
 
 <section class="hero">
-
 <h1>Concrete Built to Last</h1>
-
 <p>Proudly Serving the Dallas-Fort Worth Metroplex</p>
-
-<button onclick="location.href='tel:4694067588'">
-Call 469-406-7588
-</button>
-
+<button onclick="location.href='tel:4694067588'">Call 469-406-7588</button>
 </section>
 
 <section id="services" class="services">
-
 <h2>Our Services</h2>
-
 <div class="service-container">
 
 <div class="card">
@@ -333,71 +294,50 @@ Call 469-406-7588
 </div>
 
 </div>
-
 </section>
 
 <section id="gallery" class="gallery">
-
 <h2>Recent Projects</h2>
-
 <div class="slider">
-
 <img src="driveway.jpg" class="active">
 <img src="patio.jpg">
 <img src="custom.jpg">
-
 </div>
-
 </section>
 
 <section id="quote" class="quote">
-
 <h2>Request a Free Estimate</h2>
-
 <form action="https://formsubmit.co/lugojose40@gmail.com" method="POST">
-
-<input type="text" name="name" placeholder="Your Name" required>
-<br>
-<input type="tel" name="phone" placeholder="Phone Number" required>
-<br>
-<textarea name="message" placeholder="Tell us about your project"></textarea>
-<br>
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="tel" name="phone" placeholder="Phone Number" required><br>
+<textarea name="message" placeholder="Tell us about your project"></textarea><br>
 <button type="submit">Request Free Estimate</button>
-
 </form>
-
 </section>
 
 <section class="map">
-
 <h2>Service Area</h2>
-
 <iframe
 width="85%"
 height="450"
 style="border:0"
 loading="lazy"
 allowfullscreen
-src="https://maps.google.com/maps?q=Dallas%20Fort%20Worth%20TX&t=&z=9&ie=UTF8&iwloc=&output=embed">
+src="https://maps.google.com/maps?q=32.7767,-96.7970&z=10&output=embed">
 </iframe>
-
 </section>
 
 <footer id="contact">
-
 <h2>Contact</h2>
-
 <p>Phone: 469-406-7588</p>
 <p>Email: lugojose40@gmail.com</p>
 <p>Serving the Dallas-Fort Worth Metroplex</p>
-
 </footer>
 
 <script>
 /* Gallery slider */
 let slides = document.querySelectorAll(".slider img");
 let i = 0;
-
 setInterval(function () {
   slides[i].classList.remove("active");
   i++;
@@ -410,10 +350,7 @@ document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function (e) {
     if (this.hash !== "") {
       e.preventDefault();
-      const hash = this.hash;
-      document.querySelector(hash).scrollIntoView({
-        behavior: "smooth"
-      });
+      document.querySelector(this.hash).scrollIntoView({behavior: "smooth"});
     }
   });
 });
