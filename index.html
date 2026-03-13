@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Martinez Concrete Design | Princeton TX Concrete Contractor</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#111;
+color:white;
+}
+
+/* HEADER */
+
+header{
+background:black;
+padding:25px;
+text-align:center;
+font-size:34px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+/* NAV */
+
+nav{
+background:#111;
+text-align:center;
+padding:14px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:18px;
+font-size:18px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ccc;
+}
+
+/* HERO */
+
+.hero{
+background:url("driveway.jpg");
+background-size:cover;
+background-position:center;
+padding:170px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.hero button{
+padding:15px 32px;
+font-size:18px;
+border:2px solid white;
+background:transparent;
+color:white;
+cursor:pointer;
+border-radius:6px;
+transition:.3s;
+}
+
+.hero button:hover{
+background:white;
+color:black;
+transform:scale(1.05);
+}
+
+/* SERVICES */
+
+.services{
+padding:80px 20px;
+background:#000;
+text-align:center;
+}
+
+.services h2{
+font-size:36px;
+margin-bottom:45px;
+}
+
+.card{
+display:inline-block;
+width:300px;
+margin:15px;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+padding:18px;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:80px 20px;
+background:#111;
+text-align:center;
+}
+
+.gallery h2{
+font-size:36px;
+margin-bottom:30px;
+}
+
+.slider{
+width:90%;
+max-width:900px;
+margin:auto;
+overflow:hidden;
+border-radius:10px;
+}
+
+.slider img{
+width:100%;
+display:none;
+}
+
+.slider img.active{
+display:block;
+}
+
+/* QUOTE FORM */
+
+.form{
+background:#000;
+padding:80px 20px;
+text-align:center;
+}
+
+.form h2{
+font-size:36px;
+margin-bottom:25px;
+}
+
+.form input,
+.form textarea{
+width:80%;
+max-width:500px;
+padding:14px;
+margin:10px;
+border:none;
+border-radius:6px;
+font-family:'Poppins';
+}
+
+.form button{
+padding:14px 28px;
+background:white;
+border:none;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+
+.form button:hover{
+transform:scale(1.05);
+}
+
+/* MAP */
+
+.map{
+padding:80px 20px;
+background:#111;
+text-align:center;
+}
+
+/* CONTACT */
+
+footer{
+background:black;
+text-align:center;
+padding:40px;
+}
+
+footer h2{
+font-size:30px;
+margin-bottom:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+.card{
+width:90%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Martinez Concrete Design
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#quote">Quote</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+
+<h1>Strong Concrete. Clean Design.</h1>
+
+<p>Driveways • Patios • Custom Concrete</p>
+
+<button onclick="location.href='tel:4694067588'">
+Call 469-406-7588
+</button>
+
+</section>
+
+<section id="services" class="services">
+
+<h2>Our Services</h2>
+
+<div class="card">
+<img src="driveway.jpg">
+<h3>Driveways</h3>
+</div>
+
+<div class="card">
+<img src="patio.jpg">
+<h3>Patios</h3>
+</div>
+
+<div class="card">
+<img src="custom.jpg">
+<h3>Custom Concrete</h3>
+</div>
+
+</section>
+
+<section id="gallery" class="gallery">
+
+<h2>Recent Work</h2>
+
+<div class="slider">
+
+<img src="driveway.jpg" class="active">
+<img src="patio.jpg">
+<img src="custom.jpg">
+
+</div>
+
+</section>
+
+<section id="quote" class="form">
+
+<h2>Request a Quote</h2>
+
+<form action="https://formsubmit.co/lugojose40@gmail.com" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<br>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<br>
+
+<textarea name="message" placeholder="Describe your project"></textarea>
+
+<br>
+
+<button type="submit">Send Request</button>
+
+</form>
+
+</section>
+
+<section class="map">
+
+<h2>Service Area</h2>
+
+<iframe
+width="80%"
+height="400"
+style="border:0"
+loading="lazy"
+allowfullscreen
+src="https://www.google.com/maps?q=Princeton,Texas&output=embed">
+</iframe>
+
+</section>
+
+<footer id="contact">
+
+<h2>Contact</h2>
+
+<p>Phone: 469-406-7588</p>
+
+<p>Email: lugojose40@gmail.com</p>
+
+<p>Princeton, TX</p>
+
+</footer>
+
+<script>
+
+let slides=document.querySelectorAll(".slider img");
+let i=0;
+
+setInterval(function(){
+
+slides[i].classList.remove("active");
+
+i++;
+
+if(i>=slides.length){
+i=0;
+}
+
+slides[i].classList.add("active");
+
+},3000);
+
+</script>
+
+</body>
+</html>
