@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>Martinez Concrete Design | DFW Concrete Contractor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,248 +7,95 @@
 
 <style>
 /* GLOBAL */
-html {
-  scroll-behavior: smooth;
-}
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #111;
-  color: white;
-}
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:'Poppins', sans-serif; background:#111; color:white; }
 
 /* HEADER */
-header {
-  background: black;
-  padding: 25px;
-  text-align: center;
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
+header { background:black; padding:25px; text-align:center; font-size:34px; font-weight:700; letter-spacing:2px; }
 
 /* NAV */
-nav {
-  background: #111;
-  text-align: center;
-  padding: 14px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 20px;
-  font-size: 18px;
-  transition: 0.3s;
-}
-nav a:hover {
-  color: #ccc;
-}
+nav { background:#111; text-align:center; padding:14px; position:sticky; top:0; z-index:10; }
+nav a { color:white; text-decoration:none; margin:20px; font-size:18px; transition:.3s; }
+nav a:hover { color:#ccc; }
 
 /* HERO */
 .hero {
-  background: url("driveway.jpg");
-  background-size: cover;
-  background-position: center center;
-  padding: 200px 20px 180px 20px;
-  text-align: center;
-  position: relative;
+  background:url("driveway.jpg");
+  background-size:cover;
+  background-position:center center;
+  padding:200px 20px 180px 20px;
+  text-align:center;
+  position:relative;
 }
 .hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,.5);
+  z-index:1;
 }
-.hero h1, .hero p, .hero button {
-  position: relative;
-  z-index: 2;
-}
-.hero h1 {
-  font-size: 52px;
-  margin-bottom: 10px;
-}
-.hero p {
-  font-size: 22px;
-  margin-bottom: 30px;
-}
+.hero h1, .hero p, .hero button { position:relative; z-index:2; }
+.hero h1 { font-size:52px; margin-bottom:10px; }
+.hero p { font-size:22px; margin-bottom:30px; }
 .hero button {
-  padding: 15px 35px;
-  font-size: 18px;
-  border: 2px solid white;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.3s;
+  padding:15px 35px; font-size:18px; border:2px solid white; background:transparent; color:white; cursor:pointer; border-radius:6px; transition:.3s;
 }
-.hero button:hover {
-  background: white;
-  color: black;
-  transform: scale(1.05);
-}
+.hero button:hover { background:white; color:black; transform:scale(1.05); }
 
 /* SERVICES */
-.services {
-  padding: 90px 20px;
-  background: #000;
-  text-align: center;
-}
-.services h2 {
-  font-size: 36px;
-  margin-bottom: 50px;
-}
-.service-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-.card {
-  position: relative;
-  width: 300px;
-  height: 220px; /* fixed height for overlay centering */
-  overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.services { padding:90px 20px; background:#000; text-align:center; }
+.services h2 { font-size:36px; margin-bottom:50px; }
+.service-container { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
+.card { position:relative; width:300px; cursor:pointer; border-radius:10px; overflow:hidden; transition:transform .3s, box-shadow .3s; }
+.card img { width:100%; display:block; height:auto; object-fit:cover; }
+.card:hover { transform:scale(1.03); box-shadow:0 10px 25px rgba(0,0,0,.5); }
+
+/* Overlay fully fills card and centers content */
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.75);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  text-align: center;
-  opacity: 0;
-  transition: 0.4s;
-  padding: 20px;
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,.75); color:white;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center;
+  opacity:0; transition:.4s; padding:20px;
 }
-.card:hover .overlay {
-  opacity: 1;
-}
-.overlay h3 {
-  margin-bottom: 10px;
-}
-.overlay p {
-  font-size: 14px;
-  line-height: 1.5;
-}
+.card:hover .overlay { opacity:1; }
+.overlay h3 { margin-bottom:10px; }
+.overlay p { font-size:14px; line-height:1.5; }
 
 /* GALLERY */
-.gallery {
-  padding: 90px 20px;
-  background: #111;
-  text-align: center;
-}
-.gallery h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-.slider {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 10px;
-}
-.slider img {
-  width: 100%;
-  display: none;
-}
-.slider img.active {
-  display: block;
-}
+.gallery { padding:90px 20px; background:#111; text-align:center; }
+.gallery h2 { font-size:36px; margin-bottom:40px; }
+.slider { width:90%; max-width:900px; margin:auto; overflow:hidden; border-radius:10px; }
+.slider img { width:100%; display:none; }
+.slider img.active { display:block; }
 
 /* FREE ESTIMATE */
-.quote {
-  padding: 90px 20px;
-  background: #000;
-  text-align: center;
-}
-.quote h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-.quote input,
-.quote textarea {
-  width: 80%;
-  max-width: 500px;
-  padding: 14px;
-  margin: 10px;
-  border: none;
-  border-radius: 6px;
-  font-family: 'Poppins';
-}
-.quote button {
-  padding: 14px 30px;
-  background: white;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.quote button:hover {
-  transform: scale(1.05);
-}
+.quote { padding:90px 20px; background:#000; text-align:center; }
+.quote h2 { font-size:36px; margin-bottom:30px; }
+.quote input, .quote textarea { width:80%; max-width:500px; padding:14px; margin:10px; border:none; border-radius:6px; font-family:'Poppins'; }
+.quote button { padding:14px 30px; background:white; border:none; cursor:pointer; transition:.3s; }
+.quote button:hover { transform:scale(1.05); }
 
 /* MAP */
-.map {
-  padding: 90px 20px;
-  background: #111;
-  text-align: center;
-}
+.map { padding:90px 20px; background:#111; text-align:center; }
+.map iframe { width:85%; height:450px; border:0; }
 
 /* CONTACT */
-footer {
-  background: black;
-  text-align: center;
-  padding: 40px;
-}
-footer h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
+footer { background:black; text-align:center; padding:40px; }
+footer h2 { font-size:28px; margin-bottom:10px; }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-  .service-container {
-    flex-direction: column;
-    align-items: center;
-  }
+@media(max-width:768px){
+  .hero h1 { font-size:36px; }
+  .service-container { flex-direction:column; align-items:center; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-Martinez Concrete Design
-</header>
+<header>Martinez Concrete Design</header>
 
 <nav>
 <a href="#">Home</a>
@@ -317,14 +163,8 @@ Martinez Concrete Design
 
 <section class="map">
 <h2>Service Area</h2>
-<iframe
-width="85%"
-height="450"
-style="border:0"
-loading="lazy"
-allowfullscreen
-src="https://maps.google.com/maps?q=32.7767,-96.7970&z=10&output=embed">
-</iframe>
+<!-- Proper DFW Metroplex centered map -->
+<iframe src="https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=32.7767,-96.7970&zoom=10" allowfullscreen></iframe>
 </section>
 
 <footer id="contact">
@@ -337,20 +177,20 @@ src="https://maps.google.com/maps?q=32.7767,-96.7970&z=10&output=embed">
 <script>
 /* Gallery slider */
 let slides = document.querySelectorAll(".slider img");
-let i = 0;
-setInterval(function () {
+let i=0;
+setInterval(function(){
   slides[i].classList.remove("active");
   i++;
-  if (i >= slides.length) i = 0;
+  if(i>=slides.length) i=0;
   slides[i].classList.add("active");
-}, 3500);
+},3500);
 
-/* Smooth scroll for nav links */
+/* Smooth scroll */
 document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function (e) {
-    if (this.hash !== "") {
+  link.addEventListener('click', function(e){
+    if(this.hash!==""){
       e.preventDefault();
-      document.querySelector(this.hash).scrollIntoView({behavior: "smooth"});
+      document.querySelector(this.hash).scrollIntoView({behavior:"smooth"});
     }
   });
 });
