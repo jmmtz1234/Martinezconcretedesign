@@ -32,24 +32,26 @@ font-weight:700;
 letter-spacing:2px;
 }
 
-/* NAVIGATION */
+/* NAV */
 
 nav{
 background:#111;
 text-align:center;
 padding:14px;
+position:sticky;
+top:0;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:18px;
+margin:20px;
 font-size:18px;
 transition:.3s;
 }
 
 nav a:hover{
-color:#bbb;
+color:#ccc;
 }
 
 /* HERO */
@@ -58,18 +60,18 @@ color:#bbb;
 background:url("driveway.jpg");
 background-size:cover;
 background-position:center;
-padding:170px 20px;
+padding:180px 20px;
 text-align:center;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 margin-bottom:10px;
 }
 
 .hero p{
 font-size:22px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .hero button{
@@ -79,8 +81,8 @@ border:2px solid white;
 background:transparent;
 color:white;
 cursor:pointer;
-transition:.3s;
 border-radius:6px;
+transition:.3s;
 }
 
 .hero button:hover{
@@ -92,52 +94,82 @@ transform:scale(1.05);
 /* SERVICES */
 
 .services{
-padding:80px 20px;
+padding:90px 20px;
 background:#000;
 text-align:center;
 }
 
 .services h2{
 font-size:36px;
-margin-bottom:40px;
+margin-bottom:50px;
+}
+
+.service-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
 }
 
 .card{
-display:inline-block;
+position:relative;
 width:300px;
-margin:15px;
-background:#111;
-border-radius:10px;
 overflow:hidden;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px) scale(1.03);
-box-shadow:0 10px 30px rgba(0,0,0,.6);
+border-radius:10px;
+cursor:pointer;
 }
 
 .card img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
+display:block;
 }
 
-.card h3{
-padding:18px;
+/* Hover overlay */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+opacity:0;
+transition:.4s;
+padding:20px;
+text-align:center;
+}
+
+.card:hover .overlay{
+opacity:1;
+}
+
+.overlay h3{
+margin-bottom:10px;
+}
+
+.overlay p{
+font-size:14px;
+line-height:1.5;
 }
 
 /* GALLERY */
 
 .gallery{
-padding:80px 20px;
+padding:90px 20px;
 background:#111;
 text-align:center;
 }
 
 .gallery h2{
 font-size:36px;
-margin-bottom:30px;
+margin-bottom:40px;
 }
 
 .slider{
@@ -157,16 +189,21 @@ display:none;
 display:block;
 }
 
-/* QUOTE FORM */
+/* FREE ESTIMATE */
 
-.form{
+.quote{
+padding:90px 20px;
 background:#000;
-padding:80px 20px;
 text-align:center;
 }
 
-.form input,
-.form textarea{
+.quote h2{
+font-size:36px;
+margin-bottom:30px;
+}
+
+.quote input,
+.quote textarea{
 width:80%;
 max-width:500px;
 padding:14px;
@@ -176,7 +213,7 @@ border-radius:6px;
 font-family:'Poppins';
 }
 
-.form button{
+.quote button{
 padding:14px 30px;
 background:white;
 border:none;
@@ -184,14 +221,14 @@ cursor:pointer;
 transition:.3s;
 }
 
-.form button:hover{
+.quote button:hover{
 transform:scale(1.05);
 }
 
 /* MAP */
 
 .map{
-padding:80px 20px;
+padding:90px 20px;
 background:#111;
 text-align:center;
 }
@@ -205,7 +242,7 @@ padding:40px;
 }
 
 footer h2{
-font-size:30px;
+font-size:28px;
 margin-bottom:10px;
 }
 
@@ -217,8 +254,9 @@ margin-bottom:10px;
 font-size:36px;
 }
 
-.card{
-width:90%;
+.service-container{
+flex-direction:column;
+align-items:center;
 }
 
 }
@@ -237,7 +275,7 @@ Martinez Concrete Design
 <a href="#">Home</a>
 <a href="#services">Services</a>
 <a href="#gallery">Gallery</a>
-<a href="#quote">Quote</a>
+<a href="#quote">Free Estimate</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -245,7 +283,7 @@ Martinez Concrete Design
 
 <h1>Concrete Built to Last</h1>
 
-<p>Proudly Serving the Dallas–Fort Worth Metroplex</p>
+<p>Proudly Serving the Dallas-Fort Worth Metroplex</p>
 
 <button onclick="location.href='tel:4694067588'">
 Call 469-406-7588
@@ -257,19 +295,32 @@ Call 469-406-7588
 
 <h2>Our Services</h2>
 
+<div class="service-container">
+
 <div class="card">
 <img src="driveway.jpg">
+<div class="overlay">
 <h3>Concrete Driveways</h3>
+<p>We install durable, properly reinforced concrete driveways designed to handle heavy vehicles while improving the curb appeal of your home.</p>
+</div>
 </div>
 
 <div class="card">
 <img src="patio.jpg">
+<div class="overlay">
 <h3>Concrete Patios</h3>
+<p>Custom patio installations built to create comfortable outdoor living spaces using strong, long-lasting concrete finishes.</p>
+</div>
 </div>
 
 <div class="card">
 <img src="custom.jpg">
-<h3>Custom Concrete Work</h3>
+<div class="overlay">
+<h3>Custom Concrete</h3>
+<p>From walkways to decorative slabs, we handle custom concrete projects with careful preparation, framing, and finishing.</p>
+</div>
+</div>
+
 </div>
 
 </section>
@@ -288,9 +339,9 @@ Call 469-406-7588
 
 </section>
 
-<section id="quote" class="form">
+<section id="quote" class="quote">
 
-<h2>Request a Free Quote</h2>
+<h2>Request a Free Estimate</h2>
 
 <form action="https://formsubmit.co/lugojose40@gmail.com" method="POST">
 
@@ -306,7 +357,7 @@ Call 469-406-7588
 
 <br>
 
-<button type="submit">Send Request</button>
+<button type="submit">Request Free Estimate</button>
 
 </form>
 
@@ -317,12 +368,12 @@ Call 469-406-7588
 <h2>Service Area</h2>
 
 <iframe
-width="80%"
+width="85%"
 height="450"
 style="border:0"
 loading="lazy"
 allowfullscreen
-src="https://maps.google.com/maps?q=Dallas%20Fort%20Worth%20Texas&t=&z=9&ie=UTF8&iwloc=&output=embed">
+src="https://maps.google.com/maps?q=Dallas%20Fort%20Worth%20TX&t=&z=9&ie=UTF8&iwloc=&output=embed">
 </iframe>
 
 </section>
@@ -332,14 +383,14 @@ src="https://maps.google.com/maps?q=Dallas%20Fort%20Worth%20Texas&t=&z=9&ie=UTF8
 <h2>Contact</h2>
 
 <p>Phone: 469-406-7588</p>
-
 <p>Email: lugojose40@gmail.com</p>
-
 <p>Serving the Dallas-Fort Worth Metroplex</p>
 
 </footer>
 
 <script>
+
+/* Gallery slider */
 
 let slides=document.querySelectorAll(".slider img");
 let i=0;
@@ -356,7 +407,7 @@ i=0;
 
 slides[i].classList.add("active");
 
-},3000);
+},3500);
 
 </script>
 
