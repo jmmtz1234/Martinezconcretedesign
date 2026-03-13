@@ -30,10 +30,8 @@ nav a:hover { color:#ccc; }
 .hero::after {
   content:"";
   position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,.5);
-  z-index:1;
+  top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,.5); z-index:1;
 }
 .hero h1, .hero p, .hero button { position:relative; z-index:2; }
 .hero h1 { font-size:52px; margin-bottom:10px; }
@@ -47,17 +45,26 @@ nav a:hover { color:#ccc; }
 .services { padding:90px 20px; background:#000; text-align:center; }
 .services h2 { font-size:36px; margin-bottom:50px; }
 .service-container { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
-.card { position:relative; width:300px; cursor:pointer; border-radius:10px; overflow:hidden; transition:transform .3s, box-shadow .3s; }
+.card {
+  position:relative;
+  width:300px;
+  cursor:pointer;
+  border-radius:10px;
+  overflow:hidden;
+  transition:transform .3s, box-shadow .3s;
+}
 .card img { width:100%; display:block; height:auto; object-fit:cover; }
 .card:hover { transform:scale(1.03); box-shadow:0 10px 25px rgba(0,0,0,.5); }
 
-/* Overlay fully fills card and centers content */
+/* Overlay fully centered */
 .overlay {
   position:absolute; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,.75); color:white;
-  display:flex; flex-direction:column;
-  justify-content:center; align-items:center; text-align:center;
+  background:rgba(0,0,0,.75);
+  display:flex; justify-content:center; align-items:center; text-align:center;
   opacity:0; transition:.4s; padding:20px;
+}
+.overlay-content {
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
 }
 .card:hover .overlay { opacity:1; }
 .overlay h3 { margin-bottom:10px; }
@@ -118,24 +125,30 @@ footer h2 { font-size:28px; margin-bottom:10px; }
 <div class="card">
 <img src="driveway.jpg">
 <div class="overlay">
-<h3>Concrete Driveways</h3>
-<p>We install durable, properly reinforced concrete driveways designed to handle heavy vehicles while improving the curb appeal of your home.</p>
+  <div class="overlay-content">
+    <h3>Concrete Driveways</h3>
+    <p>We install durable, properly reinforced concrete driveways designed to handle heavy vehicles while improving the curb appeal of your home.</p>
+  </div>
 </div>
 </div>
 
 <div class="card">
 <img src="patio.jpg">
 <div class="overlay">
-<h3>Concrete Patios</h3>
-<p>Custom patio installations built to create comfortable outdoor living spaces using strong, long-lasting concrete finishes.</p>
+  <div class="overlay-content">
+    <h3>Concrete Patios</h3>
+    <p>Custom patio installations built to create comfortable outdoor living spaces using strong, long-lasting concrete finishes.</p>
+  </div>
 </div>
 </div>
 
 <div class="card">
 <img src="custom.jpg">
 <div class="overlay">
-<h3>Custom Concrete</h3>
-<p>From walkways to decorative slabs, we handle custom concrete projects with careful preparation, framing, and finishing.</p>
+  <div class="overlay-content">
+    <h3>Custom Concrete</h3>
+    <p>From walkways to decorative slabs, we handle custom concrete projects with careful preparation, framing, and finishing.</p>
+  </div>
 </div>
 </div>
 
@@ -163,7 +176,7 @@ footer h2 { font-size:28px; margin-bottom:10px; }
 
 <section class="map">
 <h2>Service Area</h2>
-<!-- Proper DFW Metroplex centered map -->
+<!-- DFW Metroplex map -->
 <iframe src="https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=32.7767,-96.7970&zoom=10" allowfullscreen></iframe>
 </section>
 
