@@ -138,7 +138,6 @@ height:300px;
 position:relative;
 border-radius:10px;
 overflow:hidden;
-cursor:pointer;
 }
 
 .card img{
@@ -160,8 +159,8 @@ align-items:center;
 justify-content:center;
 opacity:0;
 transition:.4s;
-padding:20px;
 text-align:center;
+padding:20px;
 }
 
 .card:hover .overlay{
@@ -173,14 +172,9 @@ max-width:240px;
 margin:auto;
 }
 
-.overlay h3{
-margin-bottom:10px;
-}
-
 .overlay p{
 font-size:14px;
 line-height:1.6;
-margin:auto;
 }
 
 /* GALLERY */
@@ -361,7 +355,7 @@ Call 469-406-7588
 <div class="overlay">
 <div class="overlay-content">
 <h3>Custom Concrete</h3>
-<p>Walkways, decorative slabs, and specialty concrete projects completed with expert finishing.</p>
+<p>Walkways, decorative slabs, and specialty concrete work completed with expert finishing.</p>
 </div>
 </div>
 </div>
@@ -383,6 +377,7 @@ Call 469-406-7588
 <img src="project5.jpg">
 <img src="project6.jpg">
 <img src="project7.jpg">
+<img src="project8.jpg">
 
 </div>
 
@@ -440,22 +435,27 @@ Proudly serving the Dallas–Fort Worth Metroplex including Dallas, Fort Worth, 
 
 <script>
 
-let slides=document.querySelectorAll(".slider img");
-let i=0;
+/* Recent Projects Slider */
 
-setInterval(function(){
+const slides = document.querySelectorAll(".slider img");
 
-slides[i].classList.remove("active");
+let currentSlide = 0;
 
-i++;
+function nextSlide(){
 
-if(i>=slides.length){
-i=0;
+slides[currentSlide].classList.remove("active");
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
 }
 
-slides[i].classList.add("active");
+slides[currentSlide].classList.add("active");
 
-},4000);
+}
+
+setInterval(nextSlide,4000);
 
 </script>
 
