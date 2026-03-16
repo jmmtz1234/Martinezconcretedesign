@@ -1,116 +1,308 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <title>Martinez Concrete Design | DFW Concrete Contractor</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="icon" type="image/png" href="favicon.png">
 
 <style>
-html { scroll-behavior: smooth; }
-body { margin:0; font-family:'Poppins', sans-serif; background:#111; color:white; }
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#111;
+color:white;
+}
 
 /* HEADER */
-header { background:black; padding:25px; text-align:center; font-size:34px; font-weight:700; letter-spacing:2px; }
+
+header{
+background:black;
+padding:25px;
+text-align:center;
+font-size:34px;
+font-weight:700;
+letter-spacing:2px;
+}
 
 /* NAV */
-nav { background:#111; text-align:center; padding:14px; position:sticky; top:0; z-index:10; }
-nav a { color:white; text-decoration:none; margin:20px; font-size:18px; transition:.3s; }
-nav a:hover { color:#ccc; }
+
+nav{
+background:#111;
+text-align:center;
+padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:20px;
+font-size:18px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ccc;
+}
 
 /* HERO */
-.hero {
-  background:url("driveway.jpg");
-  background-size:cover;
-  background-position:center center;
-  padding:200px 20px 180px 20px;
-  text-align:center;
-  position:relative;
+
+.hero{
+background:url("driveway.jpg");
+background-size:cover;
+background-position:center;
+padding:200px 20px;
+text-align:center;
+position:relative;
 }
-.hero::after {
-  content:"";
-  position:absolute;
-  top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,.5); z-index:1;
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
 }
-.hero h1, .hero p, .hero button { position:relative; z-index:2; }
-.hero h1 { font-size:52px; margin-bottom:10px; }
-.hero p { font-size:22px; margin-bottom:30px; }
-.hero button {
-  padding:15px 35px; font-size:18px; border:2px solid white; background:transparent; color:white; cursor:pointer; border-radius:6px; transition:.3s;
+
+.hero h1,
+.hero p,
+.hero button{
+position:relative;
+z-index:2;
 }
-.hero button:hover { background:white; color:black; transform:scale(1.05); }
+
+.hero h1{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:15px 35px;
+font-size:18px;
+border:2px solid white;
+background:transparent;
+color:white;
+cursor:pointer;
+border-radius:6px;
+transition:.3s;
+}
+
+.hero button:hover{
+background:white;
+color:black;
+transform:scale(1.05);
+}
 
 /* SERVICES */
-.services { padding:90px 20px; background:#000; text-align:center; }
-.services h2 { font-size:36px; margin-bottom:50px; }
-.service-container { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
 
-.card {
-  position:relative;
-  width:300px;
-  height:300px; /* fixed height for all cards */
-  border-radius:10px;
-  overflow:hidden;
-  cursor:pointer;
-  transition: transform .3s, box-shadow .3s;
+.services{
+padding:90px 20px;
+background:#000;
+text-align:center;
 }
-.card img {
-  width:100%;
-  height:100%;
-  object-fit:cover; /* ensures images fill card equally */
-  display:block;
-}
-.card:hover { transform:scale(1.03); box-shadow:0 10px 25px rgba(0,0,0,.5); }
 
-/* Overlay fully centered */
-.overlay {
-  position:absolute; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,.75);
-  display:flex; justify-content:center; align-items:center;
-  text-align:center;
-  opacity:0; transition:.4s; padding:20px;
+.services h2{
+font-size:36px;
+margin-bottom:50px;
 }
-.overlay-content {
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  max-width:260px; /* ensures text stays within card nicely */
+
+.service-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
-.card:hover .overlay { opacity:1; }
-.overlay h3 { margin-bottom:10px; }
-.overlay p { font-size:14px; line-height:1.5; }
+
+.card{
+width:300px;
+height:300px;
+position:relative;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+transition:.3s;
+}
+
+.card:hover{
+transform:scale(1.04);
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+transition:.4s;
+}
+
+.card:hover .overlay{
+opacity:1;
+}
+
+.overlay-content{
+width:85%;
+max-width:240px;
+text-align:center;
+}
+
+.overlay h3{
+margin-bottom:10px;
+}
+
+.overlay p{
+font-size:14px;
+line-height:1.5;
+}
 
 /* GALLERY */
-.gallery { padding:90px 20px; background:#111; text-align:center; }
-.gallery h2 { font-size:36px; margin-bottom:40px; }
-.slider { width:90%; max-width:900px; margin:auto; overflow:hidden; border-radius:10px; }
-.slider img { width:100%; display:none; }
-.slider img.active { display:block; }
+
+.gallery{
+padding:90px 20px;
+background:#111;
+text-align:center;
+}
+
+.gallery h2{
+font-size:36px;
+margin-bottom:40px;
+}
+
+.slider{
+width:90%;
+max-width:900px;
+margin:auto;
+overflow:hidden;
+border-radius:10px;
+}
+
+.slider img{
+width:100%;
+display:none;
+}
+
+.slider img.active{
+display:block;
+}
 
 /* FREE ESTIMATE */
-.quote { padding:90px 20px; background:#000; text-align:center; }
-.quote h2 { font-size:36px; margin-bottom:30px; }
-.quote input, .quote textarea { width:80%; max-width:500px; padding:14px; margin:10px; border:none; border-radius:6px; font-family:'Poppins'; }
-.quote button { padding:14px 30px; background:white; border:none; cursor:pointer; transition:.3s; }
-.quote button:hover { transform:scale(1.05); }
+
+.quote{
+padding:90px 20px;
+background:#000;
+text-align:center;
+}
+
+.quote h2{
+font-size:36px;
+margin-bottom:30px;
+}
+
+.quote input,
+.quote textarea{
+width:80%;
+max-width:500px;
+padding:14px;
+margin:10px;
+border:none;
+border-radius:6px;
+}
+
+.quote button{
+padding:14px 30px;
+background:white;
+border:none;
+cursor:pointer;
+transition:.3s;
+}
+
+.quote button:hover{
+transform:scale(1.05);
+}
 
 /* MAP */
-.map { padding:90px 20px; background:#111; text-align:center; }
-.map iframe { width:85%; height:450px; border:0; }
 
-/* CONTACT */
-footer { background:black; text-align:center; padding:40px; }
-footer h2 { font-size:28px; margin-bottom:10px; }
+.map{
+padding:90px 20px;
+background:#111;
+text-align:center;
+}
+
+.map iframe{
+width:85%;
+height:450px;
+border:0;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+text-align:center;
+padding:40px;
+}
+
+footer h2{
+font-size:28px;
+margin-bottom:10px;
+}
 
 /* MOBILE */
+
 @media(max-width:768px){
-  .hero h1 { font-size:36px; }
-  .service-container { flex-direction:column; align-items:center; }
+
+.hero h1{
+font-size:36px;
 }
+
+.service-container{
+flex-direction:column;
+align-items:center;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<header>Martinez Concrete Design</header>
+<header>
+Martinez Concrete Design
+</header>
 
 <nav>
 <a href="#">Home</a>
@@ -121,100 +313,138 @@ footer h2 { font-size:28px; margin-bottom:10px; }
 </nav>
 
 <section class="hero">
+
 <h1>Concrete Built to Last</h1>
+
 <p>Proudly Serving the Dallas-Fort Worth Metroplex</p>
-<button onclick="location.href='tel:4694067588'">Call 469-406-7588</button>
+
+<button onclick="location.href='tel:4694067588'">
+Call 469-406-7588
+</button>
+
 </section>
 
 <section id="services" class="services">
+
 <h2>Our Services</h2>
+
 <div class="service-container">
 
 <div class="card">
 <img src="driveway.jpg">
 <div class="overlay">
-  <div class="overlay-content">
-    <h3>Concrete Driveways</h3>
-    <p>We install durable, properly reinforced concrete driveways designed to handle heavy vehicles while improving the curb appeal of your home.</p>
-  </div>
+<div class="overlay-content">
+<h3>Concrete Driveways</h3>
+<p>We install durable reinforced driveways designed to handle heavy vehicles while improving curb appeal.</p>
+</div>
 </div>
 </div>
 
 <div class="card">
 <img src="patio.jpg">
 <div class="overlay">
-  <div class="overlay-content">
-    <h3>Concrete Patios</h3>
-    <p>Custom patio installations built to create comfortable outdoor living spaces using strong, long-lasting concrete finishes.</p>
-  </div>
+<div class="overlay-content">
+<h3>Concrete Patios</h3>
+<p>Custom patio installations that create comfortable outdoor living spaces with long-lasting finishes.</p>
+</div>
 </div>
 </div>
 
 <div class="card">
 <img src="custom.jpg">
 <div class="overlay">
-  <div class="overlay-content">
-    <h3>Custom Concrete</h3>
-    <p>From walkways to decorative slabs, we handle custom concrete projects with careful preparation, framing, and finishing.</p>
-  </div>
+<div class="overlay-content">
+<h3>Custom Concrete</h3>
+<p>From walkways to decorative slabs, we handle custom concrete projects with expert preparation and finishing.</p>
+</div>
 </div>
 </div>
 
 </div>
+
 </section>
 
 <section id="gallery" class="gallery">
+
 <h2>Recent Projects</h2>
+
 <div class="slider">
+
 <img src="driveway.jpg" class="active">
 <img src="patio.jpg">
 <img src="custom.jpg">
+
 </div>
+
 </section>
 
 <section id="quote" class="quote">
+
 <h2>Request a Free Estimate</h2>
+
 <form action="https://formsubmit.co/lugojose40@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Your Name" required><br>
-<input type="tel" name="phone" placeholder="Phone Number" required><br>
-<textarea name="message" placeholder="Tell us about your project"></textarea><br>
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<br>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<br>
+
+<textarea name="message" placeholder="Tell us about your project"></textarea>
+
+<br>
+
 <button type="submit">Request Free Estimate</button>
+
 </form>
+
 </section>
 
 <section class="map">
+
 <h2>Service Area</h2>
-<!-- Free embed map (no API key needed) -->
-<iframe src="https://maps.google.com/maps?q=Dallas%20Fort%20Worth%20TX&z=10&output=embed" allowfullscreen></iframe>
+
+<iframe
+src="https://maps.google.com/maps?q=Dallas%20TX&z=9&output=embed"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
 </section>
 
 <footer id="contact">
+
 <h2>Contact</h2>
+
 <p>Phone: 469-406-7588</p>
 <p>Email: lugojose40@gmail.com</p>
 <p>Serving the Dallas-Fort Worth Metroplex</p>
+
 </footer>
 
 <script>
-/* Gallery slider */
+
+/* gallery slider */
+
 let slides=document.querySelectorAll(".slider img");
 let i=0;
+
 setInterval(function(){
-  slides[i].classList.remove("active");
-  i++;
-  if(i>=slides.length) i=0;
-  slides[i].classList.add("active");
+
+slides[i].classList.remove("active");
+
+i++;
+
+if(i>=slides.length){
+i=0;
+}
+
+slides[i].classList.add("active");
+
 },3500);
 
-/* Smooth scroll nav */
-document.querySelectorAll('nav a').forEach(link=>{
-  link.addEventListener('click',function(e){
-    if(this.hash!==""){
-      e.preventDefault();
-      document.querySelector(this.hash).scrollIntoView({behavior:"smooth"});
-    }
-  });
-});
 </script>
 
 </body>
