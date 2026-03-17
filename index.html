@@ -183,6 +183,7 @@ text-align:center;
 .map iframe{
 width:85%;
 height:400px;
+border:0;
 }
 
 /* FOOTER */
@@ -279,10 +280,7 @@ text-align:center;
 <a href="sms:4694067588">💬 Text Us</a>
 </div>
 
-<form action="https://formsubmit.co/lugojose40@gmail.com" method="POST">
-
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="">
+<form id="contactForm">
 
 <input type="text" name="name" placeholder="Your Name" required>
 <br>
@@ -329,7 +327,6 @@ text-align:center;
 window.onload = function(){
 
 const slides = document.querySelectorAll(".slider img");
-
 let current = 0;
 
 setInterval(function(){
@@ -348,15 +345,33 @@ slides[current].classList.add("active");
 
 };
 
-/* SUCCESS MESSAGE */
-const form = document.querySelector("form");
+/* FORM (NO REDIRECT) */
+const form = document.getElementById("contactForm");
 const success = document.getElementById("successMessage");
 
-form.addEventListener("submit", function(){
+form.addEventListener("submit", function(e){
 
-setTimeout(function(){
+e.preventDefault();
+
+fetch("https://formsubmit.co/ajax/lugojose40@gmail.com", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({
+name: form.name.value,
+phone: form.phone.value,
+message: form.message.value
+})
+})
+.then(response => response.json())
+.then(data => {
 success.style.display = "block";
-}, 500);
+form.reset();
+})
+.catch(error => {
+alert("Something went wrong. Try again.");
+});
 
 });
 
