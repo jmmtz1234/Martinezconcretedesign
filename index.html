@@ -155,11 +155,16 @@ width:80%;
 max-width:500px;
 padding:12px;
 margin:10px;
+border:none;
+border-radius:5px;
 }
 
 .quote button{
 padding:12px 25px;
 cursor:pointer;
+border:none;
+border-radius:5px;
+background:white;
 }
 
 .quick-contact a{
@@ -276,20 +281,27 @@ text-align:center;
 <a href="sms:4694067588">💬 Text Us</a>
 </div>
 
-<input type="text" id="name" placeholder="Your Name">
+<form id="contactForm">
+
+<input type="text" name="name" placeholder="Your Name" required>
 <br>
 
-<input type="tel" id="phone" placeholder="Phone Number">
+<input type="tel" name="phone" placeholder="Phone Number" required>
 <br>
 
-<textarea id="message" placeholder="Tell us about your project"></textarea>
+<input type="email" name="email" placeholder="Email Address" required>
+<br>
+
+<textarea name="message" placeholder="Tell us about your project"></textarea>
 
 <br>
 
-<button onclick="sendEmail()">Request Free Estimate</button>
+<button type="submit">Request Free Estimate</button>
+
+</form>
 
 <p id="successMessage" style="display:none; color:lightgreen;">
-✅ Opening your email to send request!
+✅ Request sent! We will contact you shortly.
 </p>
 
 </section>
@@ -337,21 +349,37 @@ slides[current].classList.add("active");
 
 };
 
-/* EMAIL (NO FORMSUBMIT EVER) */
-function sendEmail(){
+/* PRO FORM (NO REDIRECT) */
+const form = document.getElementById("contactForm");
+const success = document.getElementById("successMessage");
 
-let name = document.getElementById("name").value;
-let phone = document.getElementById("phone").value;
-let message = document.getElementById("message").value;
+form.addEventListener("submit", function(e){
 
-let subject = "New Estimate Request";
-let body = "Name: " + name + "%0D%0APhone: " + phone + "%0D%0AMessage: " + message;
+e.preventDefault();
 
-window.location.href = "mailto:lugojose40@gmail.com?subject=" + subject + "&body=" + body;
+fetch("https://formsubmit.co/ajax/lugojose40@gmail.com", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+"Accept": "application/json"
+},
+body: JSON.stringify({
+name: form.name.value,
+phone: form.phone.value,
+email: form.email.value,
+message: form.message.value
+})
+})
+.then(response => response.json())
+.then(data => {
+success.style.display = "block";
+form.reset();
+})
+.catch(error => {
+alert("Something went wrong. Try again.");
+});
 
-document.getElementById("successMessage").style.display = "block";
-
-}
+});
 
 </script>
 
