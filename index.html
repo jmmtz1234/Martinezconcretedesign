@@ -121,10 +121,6 @@ max-width:240px;
 margin:auto;
 }
 
-.overlay h3{
-margin-bottom:10px;
-}
-
 /* GALLERY */
 .gallery{
 padding:80px 20px;
@@ -280,24 +276,20 @@ text-align:center;
 <a href="sms:4694067588">💬 Text Us</a>
 </div>
 
-<form id="contactForm">
-
-<input type="text" name="name" placeholder="Your Name" required>
+<input type="text" id="name" placeholder="Your Name">
 <br>
 
-<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="tel" id="phone" placeholder="Phone Number">
 <br>
 
-<textarea name="message" placeholder="Tell us about your project"></textarea>
+<textarea id="message" placeholder="Tell us about your project"></textarea>
 
 <br>
 
-<button type="submit">Request Free Estimate</button>
-
-</form>
+<button onclick="sendEmail()">Request Free Estimate</button>
 
 <p id="successMessage" style="display:none; color:lightgreen;">
-✅ Request sent! We will contact you shortly.
+✅ Opening your email to send request!
 </p>
 
 </section>
@@ -345,35 +337,21 @@ slides[current].classList.add("active");
 
 };
 
-/* FORM (NO REDIRECT) */
-const form = document.getElementById("contactForm");
-const success = document.getElementById("successMessage");
+/* EMAIL (NO FORMSUBMIT EVER) */
+function sendEmail(){
 
-form.addEventListener("submit", function(e){
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let message = document.getElementById("message").value;
 
-e.preventDefault();
+let subject = "New Estimate Request";
+let body = "Name: " + name + "%0D%0APhone: " + phone + "%0D%0AMessage: " + message;
 
-fetch("https://formsubmit.co/ajax/lugojose40@gmail.com", {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify({
-name: form.name.value,
-phone: form.phone.value,
-message: form.message.value
-})
-})
-.then(response => response.json())
-.then(data => {
-success.style.display = "block";
-form.reset();
-})
-.catch(error => {
-alert("Something went wrong. Try again.");
-});
+window.location.href = "mailto:lugojose40@gmail.com?subject=" + subject + "&body=" + body;
 
-});
+document.getElementById("successMessage").style.display = "block";
+
+}
 
 </script>
 
