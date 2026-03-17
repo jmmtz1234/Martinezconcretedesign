@@ -51,7 +51,6 @@ text-align:center;
 position:relative;
 }
 
-/* DARK OVERLAY (STRONGER) */
 .hero::after{
 content:"";
 position:absolute;
@@ -62,37 +61,12 @@ height:100%;
 background:rgba(0,0,0,0.65);
 }
 
-/* TEXT ABOVE OVERLAY */
 .hero h1,
 .hero p,
 .hero button{
 position:relative;
 z-index:2;
 text-shadow:0 3px 10px rgba(0,0,0,0.8);
-}
-
-.hero h1{
-font-size:50px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:22px;
-margin-bottom:25px;
-}
-
-.hero button{
-padding:15px 30px;
-border:2px solid white;
-background:transparent;
-color:white;
-cursor:pointer;
-transition:.3s;
-}
-
-.hero button:hover{
-background:white;
-color:black;
 }
 
 /* SERVICES */
@@ -151,10 +125,6 @@ margin:auto;
 margin-bottom:10px;
 }
 
-.overlay p{
-font-size:14px;
-}
-
 /* GALLERY */
 .gallery{
 padding:80px 20px;
@@ -189,6 +159,19 @@ width:80%;
 max-width:500px;
 padding:12px;
 margin:10px;
+}
+
+.quote button{
+padding:12px 25px;
+cursor:pointer;
+}
+
+.quick-contact a{
+display:inline-block;
+margin:10px;
+color:white;
+text-decoration:none;
+font-size:18px;
 }
 
 /* MAP */
@@ -291,17 +274,33 @@ text-align:center;
 
 <h2>Request a Free Estimate</h2>
 
+<div class="quick-contact">
+<a href="tel:4694067588">📞 Call Now</a>
+<a href="sms:4694067588">💬 Text Us</a>
+</div>
+
 <form action="https://formsubmit.co/lugojose40@gmail.com" method="POST">
 
-<input type="text" placeholder="Your Name" required>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="">
+
+<input type="text" name="name" placeholder="Your Name" required>
 <br>
-<input type="tel" placeholder="Phone Number" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
 <br>
-<textarea placeholder="Tell us about your project"></textarea>
+
+<textarea name="message" placeholder="Tell us about your project"></textarea>
+
 <br>
+
 <button type="submit">Request Free Estimate</button>
 
 </form>
+
+<p id="successMessage" style="display:none; color:lightgreen;">
+✅ Request sent! We will contact you shortly.
+</p>
 
 </section>
 
@@ -326,6 +325,7 @@ text-align:center;
 
 <script>
 
+/* SLIDER */
 window.onload = function(){
 
 const slides = document.querySelectorAll(".slider img");
@@ -347,6 +347,18 @@ slides[current].classList.add("active");
 },4000);
 
 };
+
+/* SUCCESS MESSAGE */
+const form = document.querySelector("form");
+const success = document.getElementById("successMessage");
+
+form.addEventListener("submit", function(){
+
+setTimeout(function(){
+success.style.display = "block";
+}, 500);
+
+});
 
 </script>
 
